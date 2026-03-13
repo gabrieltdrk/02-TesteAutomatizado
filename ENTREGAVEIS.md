@@ -35,7 +35,11 @@
 
 **Reflexão sobre o Codegen:** _(Que tipo de seletores o Codegen utilizou? São os mais indicados? Justifique.)_
 
-> _(escrever aqui)_
+> O Codegen utilizou majoritariamente seletores baseados em **ARIA roles** combinados com **accessible names**, por meio de `getByRole()` — por exemplo, `getByRole('textbox', { name: 'Nome do Aluno' })`, `getByRole('spinbutton', { name: 'Nota 1' })` e `getByRole('button', { name: 'Cadastrar' })`. Em um caso específico, foi gerado o seletor `getByRole('button', { name: 'Excluir Carlos Lima' })`, que combina role com o texto dinâmico do botão.
+>
+> Esses são os seletores **mais indicados** pela documentação do Playwright, pois refletem como o usuário e tecnologias assistivas percebem os elementos na tela, tornando os testes mais resilientes a mudanças de implementação (como alteração de `id`, `class` ou estrutura HTML). Seletores baseados em roles e labels raramente quebram sem que haja uma mudança funcional real na interface.
+>
+> A única ressalva é o seletor `getByRole('button', { name: 'Excluir Carlos Lima' })`: ele depende do nome do aluno embutido no texto do botão, tornando-o frágil caso o nome mude. Em testes manuais escritos, prefere-se identificar a linha do aluno na tabela e então clicar no botão de exclusão daquela linha, desacoplando o seletor do dado de teste.
 
 ### 2.2 Testes escritos manualmente
 
