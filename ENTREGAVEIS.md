@@ -1,7 +1,7 @@
 # Documento de Entregáveis — Automação de Testes com Playwright
 
-**Aluno(a):** Gabriel Santana de Andrade
-**Dupla (se aplicável):** Ana Beatriz Reis Malafatti
+**Aluno(a):** Gabriel Santana de Andrade (155549)
+**Dupla (se aplicável):** Ana Beatriz Reis Malafatti (173717)
 **Data:** 12/03/2026  
 **Repositório (fork):** `https://github.com/gabrieltdrk/02-TesteAutomatizado`  
 **GitHub Pages:** `https://gabrieltdrk.github.io/02-TesteAutomatizado/`
@@ -106,7 +106,7 @@
 | **Resultado esperado** | A média deve ser calculada como a média aritmética das **três** notas: (N1 + N2 + N3) / 3. Para N1=8, N2=6 e N3=10, o resultado esperado é **8.00** |
 | **Resultado obtido** | A média é calculada usando apenas as duas primeiras notas: (N1 + N2) / 2, ignorando completamente a Nota 3. Para N1=8, N2=6 e N3=10, o resultado exibido é **7.00** |
 | **Teste(s) que revelaram o defeito** | `Cálculo de Média > deve calcular a média das três notas` (`testes-playwright/tests/qs-academico.spec.ts`) |
-| **Evidência visual** | _(inserir screenshot do teste falhando e/ou do Trace Viewer)_ |
+| **Evidência visual** | ![alt text](image-3.png) |
 
 ### Análise do Trace Viewer
 
@@ -115,7 +115,7 @@
 | **Em qual asserção o teste falhou?** | `expect(celulaMedia).toHaveText('8.00')` — asserção que verifica o valor da coluna Média |
 | **Valor esperado** | `8.00` (média correta de 8, 6 e 10) |
 | **Valor obtido** | `7.00` (média incorreta de apenas 8 e 6) |
-| **Screenshot do momento da falha** | _(inserir)_ |
+| **Screenshot do momento da falha** | ![alt text](image-4.png) |
 
 ### Exemplo de cálculo demonstrando o defeito
 
@@ -135,14 +135,14 @@
 | **Função corrigida** | `calcularMedia(nota1, nota2, nota3)` |
 | **Código original (com defeito)** | `return (nota1 + nota2) / 2;` |
 | **Código corrigido** | `return (nota1 + nota2 + nota3) / 3;` |
-| **Hash do commit** | _(preencher após o commit)_ |
-| **Mensagem do commit** | _(preencher após o commit)_ |
+| **Hash do commit** | `1106148` |
+| **Mensagem do commit** | `Corrige cálculo da média para incluir a terceira nota` |
 
 **Validação pós-correção:**
 
-- ☐ Todos os testes passam após a correção
-- ☐ O site no GitHub Pages foi atualizado (commit + push)
-- ☐ O relatório HTML mostra 100% de aprovação
+- ✓ Todos os testes passam após a correção
+- ✓ O site no GitHub Pages foi atualizado (commit + push)
+- ✓ O relatório HTML mostra 100% de aprovação
 
 ---
 
@@ -150,8 +150,8 @@
 
 | # | Entregável | Concluído |
 |---|------------|:---------:|
-| 1 | Fork do repositório + GitHub Pages funcionando | ☐ |
-| 2 | Projeto Playwright com todos os testes (`qs-academico.spec.ts` e `qs-academico-codegen.spec.ts`) | ☐ |
-| 3 | Screenshots/PDF do relatório HTML (antes e depois da correção) | ☐ |
-| 4 | Registro do defeito encontrado (preenchido acima) | ☐ |
-| 5 | Commit com a correção do defeito em `docs/js/app.js` | ☐ |
+| 1 | Fork do repositório + GitHub Pages funcionando | ✓ |
+| 2 | Projeto Playwright com todos os testes (`qs-academico.spec.ts` e `qs-academico-codegen.spec.ts`) | ✓ |
+| 3 | Screenshots/PDF do relatório HTML (antes e depois da correção) | ✓ |
+| 4 | Registro do defeito encontrado (preenchido acima) | ✓ |
+| 5 | Commit com a correção do defeito em `docs/js/app.js` | ✓ |
